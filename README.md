@@ -39,7 +39,7 @@ Then add a `<script>` and `<link>` to your `index.html`:
 Declare your model with attributes `name` and `count` in your controller.  For example:
 
 ```javascript
-var tags = [  
+$scope.tags = [  
     {name: 'example', count: 0}  
 ]  
 ```
