@@ -36,10 +36,15 @@ Then add a `<script>` and `<link>` to your `index.html`:
 
 ## Usage
 
+Declare your model with attributes `name` and `count` in your controller.  For example:
+
 ```javascript
-var tags = [
+var tags = [  
+    {name: 'example', count: 0}  
+]  
 ```
 
+Then add a `<sliding-tags-input ng-model='tags'></sliding-tags-input>` to your `<body>` with `nd-mogdel`
 
 ## Contributing
 
