@@ -1,0 +1,19 @@
+{
+  "name": "angular-sliding-tags",
+  "version": "1.0.0",
+  "description": "Sliding tags in angular way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies" :{
+    "angular": "~1.6.6"
+  },
+  "keywords": [
+    "tags",
+    "sliding",
+    "angular"
+  ],
+  "author": "Nate Cheng",
+  "license": "MIT"
+}
