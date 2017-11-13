@@ -25,7 +25,7 @@ Then add a `<script>` and `<link>` to your `index.html`:
 bower install angular-sliding-tags
 ```
 
-Then add a `<script>` to your `index.html`:
+Then add a `<script>` and `<link>` to your `index.html`:
 
 ```html
 <link rel="stylesheet" href="/bower_components/angular-sliding-tags/dist/css/sliding-tags.css">
