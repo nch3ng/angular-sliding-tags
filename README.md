@@ -44,7 +44,7 @@ $scope.tags = [
 ]  
 ```
 
-Then add a `<sliding-tags-input ng-model='tags'></sliding-tags-input>` to your `<body>` with `nd-mogdel`
+Then add a `<sliding-tags-input ng-model='tags'></sliding-tags-input>` to your `<body>` with `nd-model`
 
 ## Contributing
 
