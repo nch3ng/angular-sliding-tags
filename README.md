@@ -36,6 +36,9 @@ Then add a `<script>` and `<link>` to your `index.html`:
 
 ## Usage
 
+```javascript
+var tags = [
+```
 
 
 ## Contributing
