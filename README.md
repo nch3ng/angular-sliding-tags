@@ -1,7 +1,5 @@
 # angular-sliding-tags
 
-[![NPM Version][npm-image]][https://www.npmjs.com/package/angular-sliding-tags]
-
 The [sliding tags](https://codepen.io/Thibaut/pen/eCIkr) (Thanks to [Thibaut](https://codepen.io/Thibaut/)), added input in angular way
 
 ![](https://s3-us-west-1.amazonaws.com/nate-public/sliding-tags-screenshot.jpg)
