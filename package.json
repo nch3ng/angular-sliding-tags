@@ -14,9 +14,9 @@
     "sliding",
     "angular"
   ],
-    "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/qqnc/angular-sliding-tags"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qqnc/angular-sliding-tags"
   },
   "author": "Nate Cheng",
   "license": "MIT",
