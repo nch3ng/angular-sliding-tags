@@ -22,10 +22,11 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
     },
     require: "?ngModel",
     scope: {
-      ngModel: '='
+      ngModel: '=',
+      initCount: '@'
     },
     link: function (scope, element, attrs) {
-      
+      console.log(scope.initCount);
       scope.onInputFocus = function(event){
         scope.focus = true;
       };
@@ -51,7 +52,7 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
           idx = idx + 1;
         });
         if(!match) {
-          scope.tags.push({name: tag, count: 1})
+          scope.tags.push({name: tag, count: parseInt(scope.initCount)})
         }
       }
       scope.onKeyDown = function(e){
@@ -66,14 +67,14 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
         scope.focus = false;
       }
       
-      console.log(scope);
+      //console.log(scope);
     }
   }
 }]).controller("slidingTagsCtrl", ['$scope', function($scope){
   $scope.tagInput = '';
   $scope.focus = false;
   $scope.tags = $scope.ngModel;
-  
+  $scope.initCount = 0;
   $scope.$watch('focus', function(newvalue, oldvalue){
   })
 }]);

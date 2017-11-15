@@ -21,6 +21,7 @@
   "author": "Nate Cheng",
   "license": "MIT",
   "devDependencies": {
+    "angular-mocks": "^1.6.6",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
