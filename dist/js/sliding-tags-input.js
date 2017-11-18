@@ -1,13 +1,13 @@
 var SLIDING_TAGS_INPUT = '<div class="tags">\
                             <ul class="tag">\
-                              <li ng-repeat="tag in tags"><a href="#">{{tag.name}} <span>{{tag.count}}</span></a> </li>\
+                              <li ng-repeat="tag in tagSets"><a href="#">{{tag.name}} <span>{{tag.count}}</span></a> </li>\
                               <li class="hidden"><a href="#"></a></li>\
                             </ul>\
                             <input placeholder="Add tag" type="text"\
                               ng-focus="onInputFocus($event)" \
                               ng-model="tagInput" \
                               ng-blur="onInputBlur()" \
-                              ng-keydown="onKeyDown($event)" />\
+                              ng-keydown="onKD($event)" />\
                           </div>'
 
 angular.module('sliding.tags', []).service("slidingTags", [function(){
@@ -16,26 +16,30 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
     restrict: 'E',
     replace: false,
     controller: "slidingTagsCtrl",
+    //bindToController: true,
     template: function(element, attrs) {
    
       return SLIDING_TAGS_INPUT;
     },
-    require: "?ngModel",
     scope: {
-      ngModel: '=',
+      tagInput: '=',
+      tagSets: '=',
       initCount: '@'
     },
     link: function (scope, element, attrs) {
-      console.log(scope.initCount);
+      if(typeof scope.initCount == 'undefined')
+        scope.initCountInt = 0;
+      else
+        scope.initCountInt = parseInt(scope.initCount);
+      
       scope.onInputFocus = function(event){
         scope.focus = true;
       };
-      
-      scope.addTag = function(tag){
+      scope.addTag = function(tag, tagSets){
         var match = false;
         var count = 0;
         var idx = 0;
-        angular.forEach(scope.tags, function(obj, key){
+        angular.forEach(tagSets, function(obj, key){
           
           if (tag == obj.name) {
             match = true;
@@ -52,13 +56,13 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
           idx = idx + 1;
         });
         if(!match) {
-          scope.tags.push({name: tag, count: parseInt(scope.initCount)})
+          tagSets.push({name: tag, count: scope.initCountInt})
         }
       }
-      scope.onKeyDown = function(e){
+      scope.onKD = function(e){
         if(e.which == 13) {
           //Enter
-          scope.addTag(scope.tagInput);
+          scope.addTag(scope.tagInput, scope.tagSets);
           scope.tagInput = '';
         }
       };
@@ -66,15 +70,10 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
       scope.onInputBlur = function(event) {
         scope.focus = false;
       }
-      
-      //console.log(scope);
     }
   }
 }]).controller("slidingTagsCtrl", ['$scope', function($scope){
-  $scope.tagInput = '';
   $scope.focus = false;
-  $scope.tags = $scope.ngModel;
-  $scope.initCount = 0;
   $scope.$watch('focus', function(newvalue, oldvalue){
   })
 }]);

@@ -3,4 +3,6 @@ slideingtagsapp.controller('sTagsCtrl', ['$scope', function($scope){
   $scope.tags=[
     {name: 'example', count: 1}
   ]
+  
+  $scope.tagInput = '';
 }]);
