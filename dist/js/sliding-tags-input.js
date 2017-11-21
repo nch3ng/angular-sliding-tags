@@ -10,6 +10,7 @@ var SLIDING_TAGS_INPUT = '<div class="tags">\
                               ng-keydown="onKD($event)" />\
                           </div>'
 
+
 angular.module('sliding.tags', []).service("slidingTags", [function(){
 }]).directive('slidingTagsInput', ['$timeout', function($timeout){
   return {
