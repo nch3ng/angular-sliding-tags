@@ -22,6 +22,38 @@ describe('Sliding Tags', function() {
     expect(inputelem.val()).toBe('nate');
   })*/
   
+  it('placeholder default should be add tag', function(){
+    var scope = $rootScope.$new();
+    scope.tags = [{name: 'test data 1', count: 2}];
+    scope.tagInput = '';
+    var html = "<sliding-tags-input tag-sets='tags' tag-input='tagInput'><sliding-tags-input>";
+    
+    var element = angular.element(html);
+    var compiled = $compile(element)(scope);
+    var ctrl = element.controller('slidingTagsInput');
+    scope.$digest();
+    
+    var elemInput = element.find('input');
+    
+    expect(elemInput.attr('placeholder')).toBe('Add tag');
+  })
+  
+  it('set placeholder', function(){
+    var scope = $rootScope.$new();
+    scope.tags = [{name: 'test data 1', count: 2}];
+    scope.tagInput = '';
+    var html = "<sliding-tags-input tag-sets='tags' tag-input='tagInput' placeholder='Add some tags'><sliding-tags-input>";
+    
+    var element = angular.element(html);
+    var compiled = $compile(element)(scope);
+    var ctrl = element.controller('slidingTagsInput');
+    scope.$digest();
+    
+    var elemInput = element.find('input');
+    
+    expect(elemInput.attr('placeholder')).toBe('Add some tags');
+  })
+  
   it('Add new input', function() {
     // Compile a piece of HTML containing the directive
     var scope = $rootScope.$new();
