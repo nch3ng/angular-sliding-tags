@@ -7,6 +7,10 @@ Source from: [sliding tags](https://codepen.io/Thibaut/pen/eCIkr) (Thanks to [Th
 
 ![](https://s3-us-west-1.amazonaws.com/nate-public/sliding-tags-screenshot.jpg)
 
+## Prerequisites
+
+#### [angularjs](https://github.com/angular/angular)
+
 ## Installation
 
 You can install this package either with `npm` or with `bower`.
@@ -35,6 +39,11 @@ Then add a `<script>` and `<link>` to your `index.html`:
 ```html
 <link rel="stylesheet" href="/bower_components/angular-sliding-tags/dist/css/sliding-tags.css">
 <script src="/bower_components/angular-sliding-tags/dist/js/sliding-tags-input.js"></script>
+```
+### Include the module in app
+
+```javascript
+var app = angular.module('app', ['sliding.tags']);
 ```
 
 ## Usage
