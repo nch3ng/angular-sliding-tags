@@ -3,7 +3,7 @@ var SLIDING_TAGS_INPUT = '<div class="tags">\
                               <li ng-repeat="tag in tagSets"><a href="#">{{tag.name}} <span>{{tag.count}}</span></a> </li>\
                               <li class="hidden"><a href="#"></a></li>\
                             </ul>\
-                            <input placeholder="Add tag" type="text"\
+                            <input placeholder="{{placeholder}}" type="text"\
                               ng-focus="onInputFocus($event)" \
                               ng-model="tagInput" \
                               ng-blur="onInputBlur()" \
@@ -25,13 +25,16 @@ angular.module('sliding.tags', []).service("slidingTags", [function(){
     scope: {
       tagInput: '=',
       tagSets: '=',
-      initCount: '@'
+      initCount: '@',
+      placeholder: '@'
     },
     link: function (scope, element, attrs) {
       if(typeof scope.initCount == 'undefined')
         scope.initCountInt = 0;
       else
         scope.initCountInt = parseInt(scope.initCount);
+      
+      scope.placeholder = scope.placeholder || 'Add tag';
       
       scope.onInputFocus = function(event){
         scope.focus = true;

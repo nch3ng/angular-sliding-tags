@@ -207,3 +207,7 @@ body {
   clear: both;
   display: table;
 }
+
+.hidden {
+  opacity: 0;
+}
