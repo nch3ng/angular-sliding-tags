@@ -1,6 +1,6 @@
 {
   "name": "angular-sliding-tags",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Sliding tags in angular way",
   "main": "index.js",
   "scripts": {
