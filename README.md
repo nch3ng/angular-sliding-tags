@@ -1,7 +1,7 @@
 # angular-sliding-tags
 [![npm version](https://badge.fury.io/js/angular-sliding-tags.svg)](https://badge.fury.io/js/angular-sliding-tags) ![Build Status](https://travis-ci.org/qqnc/angular-sliding-tags.svg?branch=master)
 
-[DEMO](http://angular-sliding-tags.natecheng.me.s3-us-west-1.amazonaws.com/index.html)  
+[DEMO](http://angular-sliding-tags.natecheng.me/index.html)  
 
 Source from: [sliding tags](https://codepen.io/Thibaut/pen/eCIkr) (Thanks to [Thibaut](https://codepen.io/Thibaut/)).  Learn its style and implement it with a input in angular way
 
