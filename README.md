@@ -74,3 +74,4 @@ Then add a `<sliding-tags-input ng-model='tags'></sliding-tags-input>` to your `
 
 
 ## License
+
